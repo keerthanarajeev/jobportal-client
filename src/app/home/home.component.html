@@ -1,0 +1,70 @@
+<div class="home " id="home">
+    <div class="row ">
+        <div class="col-lg-6 pt-2 ps-5">
+            <div data-aos="fade-right" class="heading pt-5 ">
+                <h1 class="text-light pt-5  lh-base" id="h1">Connecting Talent With <br> <span
+                        id="h2">Opportunity</span>
+                </h1>
+                <p class="text-light">Find great job for build your bright career.Have many job in this platform.</p>
+
+            </div>
+            <div class="input-group mb-3 mt-4">
+                <button class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="form-floating">
+                    <input [(ngModel)]="jobName" type="text" class="form-control" id="search" placeholder="Username">
+                    <label for="floatingInputGroup1">search Job by Title or Company</label>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+            <div class="py-5 ps-5" id="homeimg">
+
+                <img src="https://i.postimg.cc/7hhQMsCd/Untitled-design-19.png" class="w-75 ps-5" alt="">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="joblist  text-center  p-5" id="jobs" style="background-color: #015155;">
+
+    <h1 class="text-light">JOB LIST</h1>
+    <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine"
+        *ngFor="let i of alljobs | searchjob : jobName : 'jobtitle'| searchjob : jobName : 'company' | searchjob : jobName : 'category' | paginate: {itemsPerPage: 3, currentPage: p} let j=index;"
+        class="card mb-3 py-4 px-1 mt-5 container" style="max-width: 200vh;">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img [src]="i.companylogourl" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8 d-flex align-items-between">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.jobtitle}} ({{i.companyname}})</h5>
+                    <p class="card-text">Qualification:{{i.qualification}}</p>
+                </div>
+                
+            </div>
+            <div class="col-md-2">
+                <div routerLink="/singleview/{{i.id}}">
+                    <button class="btn btn-info mt-4 text-light p-2 py-3\2"
+                        style="background-color: #015155;width: 150px;">Know More <i
+                            class="fa-solid fa-angles-right fa-beat"></i></button>
+
+                </div>
+            </div>
+           
+
+        </div>
+
+    </div>
+
+    <div class="mt-5">
+        <pagination-controls class="text-center mt-5 text-light" (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="card container mb-3 p-2 shadow" style="max-width: 640px;">
+    <div class="row g-0">
+        <div class="col-md-4 ">
+            <img [src]="profilePic"
+                class="img-fluid rounded-end-circle" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body p-2">
+                <h4>Edit Profile</h4>
+<hr>
+<p class="fst-italic">Login Time : {{data | date : 'medium'}}</p>
+
+                <span>Email : {{AdminUserName}}@gmail.com</span> <br>
+                <button type="button" class="btn btn-dark mt-4 mb-2 w-50" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="modelhead">
+               <label id="modalimage" for="p1">
+                    <img [src]="profilePic" class="img-fluid  " width="100" height="100" alt="...">
+                    <input (change)="getFile($event)"  style="display: none;" type="file" id="p1">
+               </label>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h1 class="modal-title fs-5 text-center pb-3 fw-bolder" id="exampleModalLabel">Edit Profile</h1>
+                <form>
+                    <div class="form-floating mb-3">
+                        <input [(ngModel)]="admin.email"  type="email" class="form-control" name="email"
+                            id="email" placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                    </div>
+    
+                    <div class="form-floating">
+                        <input [(ngModel)]="admin.password"   type="text" class="form-control" name="password"
+                            id="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer w-100">
+                <div class=" mt-3 d-grid gap-2 d-md-block w-100 p-2">
+                    <button (click)="editData()" type="button" class="btn btn-dark " style="width: 211px;" data-bs-dismiss="modal" >Update</button>
+                    <button type="button" class="btn btn-light ms-4 " style="width: 211px;" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

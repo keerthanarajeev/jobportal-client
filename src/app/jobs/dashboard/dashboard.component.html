@@ -1,0 +1,79 @@
+<div class="row">
+
+    <div class="col-lg-2 pt-5 ps-4 " id="nav">
+
+        <div id="links">
+            <a routerLink="/home">
+                <div>
+                    <strong class="head">
+                        <i class="fa-solid fa-house mx-3"></i>
+                        Home
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+
+            <a routerLink='/jobs/all-jobs'>
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-users mx-3"></i>
+                        All Jobs
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <a routerLink='/jobs/add-jobs'>
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-users mx-3"></i>
+                        Add Jobs
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+            <a>
+                <div (click)="logout()">
+                    <strong>
+                        <i class="fa-solid fa-right-from-bracket mx-3"></i>
+                        Logout
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-10 ps- mt-5">
+        <h1 class="text-dark text-center" id="h1">Welcome {{AdminUserName}}</h1>
+
+
+        <hr class="w-75 container">
+        <div class="row p-5 ms-3 mt-4" id="boxes">
+
+            <div class="col-lg-12">
+
+
+                <app-admin-edit [data]="date" (onAdminChange)="updateAdmin($event)"></app-admin-edit>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>

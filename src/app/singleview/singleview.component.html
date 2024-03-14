@@ -1,0 +1,79 @@
+<div class="card container w-75 shadow m-5">
+    <div class="card-body">
+        <div class="row p-3">
+            <div class="col-md-2">
+                <img [src]="singleView.companylogourl" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-8 ">
+                <h3 class="card-title">{{ singleView.jobtitle }}                 
+                     <span class="text-muted fs-5">- {{ singleView.companyname }}</span>
+                    </h3>
+            </div>
+            <div class="col-md-2">
+               <a href={{singleView.applicationlink}}> <button class="p-2 rounded  text-light" id="apply" style="width: 150px;">Apply on Website</button></a>
+            </div>
+        </div>
+        <hr>
+        <div class="text-muted">
+            <span>
+                <i class="fa-solid fa-location-dot pe-2"></i>{{ singleView.joblocation }}
+            </span>
+
+        </div>
+
+        <div class="text-muted mt-1"> <span>
+                <i class="fa-solid fa-sack-dollar pe-2"></i>{{ singleView.monthlysalary }} Monthly
+            </span></div>
+
+        <div class="border rounded p-3 my-4" id="high">
+            <h5>Job Highlights</h5>
+            <p class="pt-2"><i class="fa-solid fa-people-group pe-3"></i>{{ singleView.totalapplicants }} Applicants</p>
+        </div>
+
+        <hr>
+        <div  class="bg-body-secondary px-3 py-3">
+            <h5 class="text-decoration-underline">About Company</h5>
+            <p>{{ singleView.aboutcompany }}</p>
+        </div> <hr>
+
+        <div  class="bg-body-secondary px-3 py-3">
+            <h5 class="text-decoration-underline">Job Description</h5>
+            <p>{{ singleView.jobdescription }}</p>
+        </div>
+
+        <hr>
+        <div class="bg-body-secondary px-3 py-3">
+            <div>
+                <h5 class="text-decoration-underline">Job Requirements</h5>
+                <div class="d-flex  justify-content-start pt-1">
+                    <p><i class="fa-solid fa-briefcase me-2"></i>Experience:{{ singleView.experience }}</p>
+                    <p class="ps-5"><i class="fa-solid fa-user-graduate me-2"></i>Qualification :{{ singleView.qualification }}</p>
+                </div>
+            </div>
+    
+            <div class="mt-1">
+                <h5 class="text-decoration-underline">Job Role</h5>
+                <div class="d-flex justify-content-start pt-1">
+                    <p><i class="fa-solid fa-briefcase me-2"></i>Category: 
+                        {{ singleView.employmenttype == 1 ? 'Full Time Jobs' : 
+                           singleView.employmenttype == 2 ? 'Part Time Jobs' : 
+                           singleView.employmenttype == 3 ? 'Work From Home' : 
+                           singleView.employmenttype == 4 ? 'Internships' : '' }}
+                    </p>
+                    <p class="ps-5"><i class="fa-solid fa-user-graduate me-2"></i>Employment Type: 
+                        
+                        {{ singleView.category == 1 ? 'Information Technology' : 
+                        singleView.category == 2 ? 'Health Care' : 
+                        singleView.category == 3 ? 'Education' : 
+                        singleView.category == 4 ? 'Sales and Marketing' :
+                        singleView.category == 3 ? 'Aviation' : 
+                        singleView.category == 4 ? 'Others' :'' }}                    
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+#home{
+    background: rgb(5,81,83);
+background: linear-gradient(90deg, rgba(5,81,83,1) 0%, rgba(0,0,0,1) 15%);
+height: 100%;
+
+}
+#jobs{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 33%, rgba(3,116,119,1) 100%);
+}
+#h1{
+    font-family: "Playfair Display", serif;
+        font-size: 50px;
+}
+#h2{
+    color: #00a7ac;
+    
+}
+  
